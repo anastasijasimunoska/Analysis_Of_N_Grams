@@ -64,7 +64,7 @@ public class StatParallel {
             List<String> previousTail = Collections.emptyList();
             String line;
 
-            // Timer starts — only measures processing
+            
             long startTime = System.nanoTime();
 
             while ((line = reader.readLine()) != null) {
@@ -111,12 +111,12 @@ public class StatParallel {
                 cycles += part.cycles;
             }
 
-            // Timer stops — before any printing
+           
             long endTime = System.nanoTime();
             double elapsedSeconds =
                     (endTime - startTime) / 1_000_000_000.0;
 
-            // Print basic results
+          
             System.out.printf("Total unique n-grams: %d%n",
                     freqMap.size());
             System.out.printf("Total Cycles: %d%n", cycles);
@@ -124,7 +124,7 @@ public class StatParallel {
                     "Execution time in parallel mode: %.3f seconds%n",
                     elapsedSeconds);
 
-            // Print P(B|A) AFTER timer
+           
             System.out.println(
                     "\n--- Top 20 Relative Frequencies P(B|A) ---");
             freqMap.entrySet().stream()
